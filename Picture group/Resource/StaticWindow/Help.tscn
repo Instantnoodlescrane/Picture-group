@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resource/Theme/TopBar.tres" type="Theme" id=1]
+[ext_resource path="res://Resource/Theme/Help.tres" type="StyleBox" id=2]
+
+[node name="Help" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="Help2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 264.0
+margin_right = 1024.0
+margin_bottom = 288.0
+alignment = 1
+
+[node name="Picture group" type="Label" parent="VBoxContainer/Help2"]
+margin_left = 449.0
+margin_right = 574.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 1 )
+text = "Picture group"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Pass" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 292.0
+margin_right = 1024.0
+margin_bottom = 306.0
+
+[node name="Pass" type="Label" parent="VBoxContainer/Pass"]
+margin_bottom = 14.0
+
+[node name="Help" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 310.0
+margin_right = 1024.0
+margin_bottom = 335.0
+alignment = 1
+
+[node name="Help" type="Label" parent="VBoxContainer/Help"]
+margin_left = 435.0
+margin_right = 467.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 1 )
+text = "帮助"
+align = 1
+valign = 1
+
+[node name="Pass" type="Label" parent="VBoxContainer/Help"]
+margin_left = 471.0
+margin_top = 5.0
+margin_right = 487.0
+margin_bottom = 19.0
+text = "    "
+
+[node name="CTRL" type="Label" parent="VBoxContainer/Help"]
+margin_left = 491.0
+margin_right = 538.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 1 )
+custom_styles/normal = ExtResource( 2 )
+text = "CTRL"
+align = 1
+valign = 1
+
+[node name="+" type="Label" parent="VBoxContainer/Help"]
+margin_left = 542.0
+margin_right = 566.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+text = "+"
+align = 1
+valign = 1
+
+[node name="P" type="Label" parent="VBoxContainer/Help"]
+margin_left = 570.0
+margin_right = 588.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 24 )
+theme = ExtResource( 1 )
+custom_styles/normal = ExtResource( 2 )
+text = "P"
+align = 1
+valign = 1

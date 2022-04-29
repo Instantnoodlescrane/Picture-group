@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scrpit/DyWindow/Ma.gd" type="Script" id=1]
+[ext_resource path="res://Scrpit/StaticWindow/ImageBox.gd" type="Script" id=2]
+[ext_resource path="res://Resource/StaticWindow/ImageBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=4]
+
+[node name="Transform" type="Position2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="ImageBox" type="Sprite" parent="." instance=ExtResource( 3 )]
+position = Vector2( 267, 240 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
