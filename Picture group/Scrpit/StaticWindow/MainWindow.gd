@@ -4,7 +4,7 @@ extends Control
 onready var HelpWindow = $HelpWindow
 
 
-func _ready():
+func _ready() -> void:
 #	help_window()
 	pass
 

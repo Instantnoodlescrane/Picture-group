@@ -1,13 +1,14 @@
 extends Control
 
 
-onready var ImageBox = preload( "res://Resource/StaticWindow/ImageBox.tscn" )
-onready var Transforma = $ScrollContainer/Box
+onready var ImageBox   = preload( "res://Resource/StaticWindow/ImageBox.tscn" )
+onready var Transforma = $ScrollContainer/Box/Transform
+onready var ImageBoxs  = $ScrollContainer/Box/Transform
 
 var _position : Vector2
 
 
-func _ready():
+func _ready() -> void:
 	get_tree().connect( "files_dropped", self, "on_file_drag" )
 
 
@@ -16,7 +17,7 @@ func _physics_process( _delta : float ) -> void:
 
 
 #从外部倒入文件
-func on_file_drag( var files, var _screen ):
+func on_file_drag( var files, var _screen ) -> void:
 	for f in files:
 		var textuer = ImageTexture.new()
 		var image   = Image.new()

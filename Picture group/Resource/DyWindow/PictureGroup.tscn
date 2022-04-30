@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/TopBlackToAlpht.png" type="Texture" id=1]
 [ext_resource path="res://Assets/BackDot.png" type="Texture" id=2]
 [ext_resource path="res://Scrpit/DyWindow/Ma.gd" type="Script" id=3]
 [ext_resource path="res://Scrpit/DyWindow/PictureGroup.gd" type="Script" id=4]
 [ext_resource path="res://Resource/StaticWindow/Help.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resource/StaticWindow/ImageBox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.160784, 0.160784, 0.160784, 1 )
@@ -24,7 +25,6 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.0352941 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,6 +48,8 @@ margin_bottom = -24.0
 [node name="Transform" type="Position2D" parent="ScrollContainer/Box"]
 position = Vector2( 5, 7 )
 script = ExtResource( 3 )
+
+[node name="ImageBox" parent="ScrollContainer/Box/Transform" instance=ExtResource( 6 )]
 
 [node name="TopColor" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.301961 )

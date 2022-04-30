@@ -1,10 +1,17 @@
 extends Node
 
 
-var FileDialogs = null
-var FolderDialogs = null
+#记录 ImageBox 控件是否被选中。
+var pictuer_is_selete = []
+var picture_sun       = 0
 
-var PopupWindowFile = null
+func _ready():
+	pass
+
+
+func _physics_process(delta):
+#	print(picture_sun)
+	pass
 
 
 func delete_image( i ):
