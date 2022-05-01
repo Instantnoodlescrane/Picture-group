@@ -1,21 +1,25 @@
 extends Position2D
 
 
+onready var Tag   = preload( "res://Resource/FloatWindow/Tag.tscn" )
+
 #前一帧的鼠标位置
 var forword_x : float = 0.0
 var forword_y : float = 0.0
-
 var child_control : int = 0
+var _position : Vector2
 
 
 func _physics_process( _delta : float ) -> void:
+	_position = Vector2(get_global_mouse_position().x, get_global_mouse_position().y)
 	Global.picture_sun = get_image_boxs()
 	forword_xy()
 
 
 func _input( event ) -> void:
-	if Input.is_action_just_pressed( "delete" ):
-		delete_image_box( is_selete() )
+#	if Input.is_action_just_pressed( "delete" ):
+#		delete_image_box( is_selete() )
+	pass
 
 
 func forword_xy() -> void:
@@ -47,4 +51,5 @@ func get_image_boxs() -> int:
 
 
 func delete_image_box( i ) -> void:
-	get_child( i ).free_queue()
+	pass
+#	get_child( i ).free_queue()
