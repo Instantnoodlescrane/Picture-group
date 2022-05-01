@@ -1,6 +1,6 @@
 # Picture-group
 
-[![Picsture-group UI](https://github.com/Instantnoodlescrane/Picture-group/blob/main/Image1.png)]
+![Picsture-group UI](https://github.com/Instantnoodlescrane/Picture-group/blob/main/Image1.png)
 
 
 - 使用 Godot 开发的，用于多个图片按用户意志有序分布。
