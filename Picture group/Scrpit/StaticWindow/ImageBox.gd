@@ -1,6 +1,7 @@
 extends Sprite
 
 
+#控制组件的移动和缩放
 class_name ImageBox
 
 
@@ -35,6 +36,7 @@ func _physics_process( _delta : float ) -> void:
 
 func _input( event ) -> void:
 	if !is_selete():
+		#鼠标左键一下移动
 		if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 			if get_rect().has_point(to_local(event.position)):
 				Global.pictuer_is_selete[ get_parent().get_index() ] = true
@@ -43,17 +45,18 @@ func _input( event ) -> void:
 	#			if !is_selete():
 				is_yess()
 		
+		#鼠标右键一下缩放
 		if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:
 			if get_rect().has_point(to_local(event.position)):
 				Global.pictuer_is_selete[ get_parent().get_index() ] = true
 				is_salces()
 				th_mouse = get_global_mouse_position()
 
+	#不再图像的范围内点鼠标后不再缩放或移动
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:
 		if !get_rect().has_point(to_local(event.position)):
 			is_salce = false
 			Global.pictuer_is_selete[ get_parent().get_index() ] = false
-			
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if !get_rect().has_point(to_local(event.position)):
 			is_yes = false
@@ -70,14 +73,17 @@ func is_selete() -> bool:
 	return false
 
 
+#是否缩放
 func is_salces() -> void:
 	is_salce = !is_salce
 
 
+#是否移动
 func is_yess() -> void:
 	is_yes = !is_yes
 
 
+#缩放
 func salces() -> void:
 	var _aposition = self.get_global_position()
 	var ao = th_mouse - _aposition
@@ -91,6 +97,7 @@ func salces() -> void:
 	self.global_scale.y = (bo/ao).x
 
 
+#移动
 func move():
 	is_salce = false
 

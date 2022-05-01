@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resource/Theme/TopBar.tres" type="Theme" id=1]
+[ext_resource path="res://Scrpit/FloatWindow/Box.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Icon/标签_tag-one.svg" type="Texture" id=3]
+
+[node name="Tag" type="Sprite"]
+position = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="LineEdit" type="LineEdit" parent="."]
+modulate = Color( 1, 1, 1, 0.607843 )
+anchor_right = 1.0
+margin_left = 13.0
+margin_top = -8.0
+margin_right = 82.0
+margin_bottom = 10.0
+theme = ExtResource( 1 )
+align = 1
+expand_to_text_length = true
+caret_blink = true
