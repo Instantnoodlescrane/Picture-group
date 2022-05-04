@@ -29,7 +29,7 @@ margin_top = -24.0
 margin_right = 70.0
 rect_min_size = Vector2( 0, 24 )
 
-[node name="Githun" type="Button" parent="HBoxContainer"]
+[node name="Github" type="Button" parent="HBoxContainer"]
 margin_right = 28.0
 margin_bottom = 24.0
 theme = ExtResource( 3 )
@@ -40,7 +40,6 @@ icon = ExtResource( 1 )
 modulate = Color( 0.819608, 0.960784, 0, 1 )
 margin_left = 32.0
 margin_top = 3.0
-margin_right = 64.0
+margin_right = 32.0
 margin_bottom = 20.0
 theme = ExtResource( 3 )
-text = "错误"

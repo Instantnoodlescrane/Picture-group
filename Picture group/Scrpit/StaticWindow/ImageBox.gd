@@ -35,38 +35,53 @@ func _physics_process( _delta : float ) -> void:
 
 
 func _input( event ) -> void:
-	if !is_selete():
-		#鼠标左键一下移动
-		if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-			if get_rect().has_point(to_local(event.position)):
-				Global.pictuer_is_selete[ get_parent().get_index() ] = true
+	#鼠标左键一下移动
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		if get_rect().has_point(to_local(event.position)):
+			if is_yes:
+				Global.pictuer_is_selete[ get_index() ] = false
+				
+			is_yess()
+			if !is_selete():
+				Global.pictuer_is_selete[ get_index() ] = true
 				var _x = get_global_mouse_position().x
 				var _y = get_global_mouse_position().y
 	#			if !is_selete():
-				is_yess()
 		
-		#鼠标右键一下缩放
-		if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:
-			if get_rect().has_point(to_local(event.position)):
-				Global.pictuer_is_selete[ get_parent().get_index() ] = true
-				is_salces()
-				th_mouse = get_global_mouse_position()
+	#鼠标右键一下缩放
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:
+		if get_rect().has_point(to_local(event.position)):
+			if is_salce:
+				Global.pictuer_is_selete[ get_index() ] = false
+				
+			is_salces()
+			th_mouse = get_global_mouse_position()
+			
+			if !is_selete():
+				Global.pictuer_is_selete[ get_index() ] = true
+				var _x = get_global_mouse_position().x
+				var _y = get_global_mouse_position().y
+	#			if !is_selete():
 
 	#不再图像的范围内点鼠标后不再缩放或移动
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:
 		if !get_rect().has_point(to_local(event.position)):
 			is_salce = false
-			Global.pictuer_is_selete[ get_parent().get_index() ] = false
+			is_yes   = false
+			Global.pictuer_is_selete[ get_index() ] = false
+			
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if !get_rect().has_point(to_local(event.position)):
-			is_yes = false
-			Global.pictuer_is_selete[ get_parent().get_index() ] =  false
+			is_salce = false
+			is_yes   = false
+			Global.pictuer_is_selete[ get_index() ] =  false
 
 
 #用于消除选择 ImageBox 控件重叠时的重复选择。
 #如果有被选择的 ImageBox 控件就返回 true。否则就返回 false。
 #true 就意味着已经有被选中的 ImageBox 控件， 这样就不可以多选其他的 ImageBox 控件。
 func is_selete() -> bool:
+
 	for i in Global.pictuer_is_selete:
 		if i:
 			return true
