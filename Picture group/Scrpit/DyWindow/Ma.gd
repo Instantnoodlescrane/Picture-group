@@ -1,11 +1,10 @@
-extends Position2D
+extends GlobalSalce
 
 
 onready var Tag   = preload( "res://Resource/FloatWindow/Tag.tscn" )
 
 #前一帧的鼠标位置
-var forword_x : float = 0.0
-var forword_y : float = 0.0
+
 var child_control : int = 0
 var _position : Vector2
 
@@ -16,25 +15,10 @@ func _physics_process( _delta : float ) -> void:
 	forword_xy()
 
 
-func _input( event ) -> void:
-#	if Input.is_action_just_pressed( "delete" ):
-#		delete_image_box( is_selete() )
-	pass
-
-
-func forword_xy() -> void:
-	#当前帧的鼠标位置
-	var x = get_global_mouse_position().x
-	var y = get_global_mouse_position().y
-	var v_x = x - forword_x
-	var v_y = y - forword_y
-	
-	forword_x = get_global_mouse_position().x
-	forword_y = get_global_mouse_position().y
-	
-	if Input.get_action_strength( "Center" ):
-		self.global_position.x += v_x
-		self.global_position.y += v_y
+func _input(event):
+#	self.global_scale *= (((Input.get_mouse_button_mask()-12)/4)*0.2)
+	salce_sy()
+	to_defaul()
 
 
 func is_selete() -> int:

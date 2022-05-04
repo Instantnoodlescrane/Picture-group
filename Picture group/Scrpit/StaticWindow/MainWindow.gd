@@ -5,8 +5,9 @@ onready var HelpWindow = $HelpWindow
 
 
 func _ready() -> void:
-#	help_window()
-	pass
+	Global.HelpWindow = HelpWindow
+#	OS.window_borderless = true
+
 
 
 func _input( event ) -> void:
@@ -16,4 +17,4 @@ func _input( event ) -> void:
 
 #显示帮助文件
 func help_window() -> void:
-	HelpWindow.popup_centered( Vector2( 500, 400 ) )
+	HelpWindow.popup_centered( Vector2( 500, 500 ) )

@@ -19,14 +19,27 @@ func _physics_process( _delta : float ) -> void:
 
 
 func _input( event ) -> void:
-	if Input.is_action_just_pressed( "AddTag" ):
+	if Input.is_action_just_pressed( "Shift" ):
+		Global.tag_is_selete.append( false )
 		add_tag()
+	if Input.is_action_just_pressed( "delete" ):
+		delete_image_box()
 
 
 #从外部倒入文件
 func on_file_drag( var files, var _screen ) -> void:
 	for f in files:
 		add_image_box(f)
+
+
+func delete_image_box() -> void:
+	var ind = 0
+	
+	for i in Global.pictuer_is_selete:
+		if i:
+			Transforms.get_child(i).free()
+			Global.pictuer_is_selete.remove(i)
+		ind += 1
 
 
 #添加图片

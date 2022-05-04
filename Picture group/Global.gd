@@ -1,8 +1,11 @@
 extends Node
 
 
+var HelpWindow = null
+
 #记录 ImageBox 控件是否被选中。
 var pictuer_is_selete = []
+var tag_is_selete	  = []
 var picture_sun       = 0
 
 func _ready():

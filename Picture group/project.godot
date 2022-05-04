@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Position2D",
+"class": "GlobalSalce",
+"language": "GDScript",
+"path": "res://GlobalSalceAndMove.gd"
+}, {
 "base": "Sprite",
 "class": "ImageBox",
 "language": "GDScript",
 "path": "res://Scrpit/StaticWindow/ImageBox.gd"
 } ]
 _global_script_class_icons={
+"GlobalSalce": "",
 "ImageBox": ""
 }
 
@@ -22,16 +28,19 @@ _global_script_class_icons={
 
 config/name="Picture group"
 run/main_scene="res://Resource/MainWindow.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Global.gd"
 
+[debug]
+
+settings/fps/force_fps=200
+
 [display]
 
 window/size/test_width=800
-window/size/test_height=600
+window/size/test_height=700
 
 [input]
 
@@ -53,15 +62,29 @@ delete={
 }
 Help={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":80,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 AddTag={
+"deadzone": 0.51,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+to_default={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":true,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777240,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Shift={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
 [physics]
 
 common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"

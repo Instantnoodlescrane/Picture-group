@@ -19,4 +19,3 @@ margin_bottom = 10.0
 theme = ExtResource( 1 )
 align = 1
 expand_to_text_length = true
-caret_blink = true
